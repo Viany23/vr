@@ -1,0 +1,42 @@
+<html>
+
+	<head>
+		<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+	</head>
+
+	<body>
+	
+	<a-scene>
+	
+		<a-assets>
+			<a-mixin id="box" geometry="primitive: box"></a-mixin>
+			<a-mixin id="cyl" geometry="primitive: cylinder"></a-mixin>
+			<a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
+			<a-mixin id="tall" geometry="height: 3"></a-mixin>
+			<a-mixin id="wide" geometry="width: 3"></a-mixin>
+			<a-mixin id="rad" geometry="radius: 2"></a-mixin>
+			<a-mixin id="blue" material="color: blue"></a-mixin>
+			<a-mixin id="green" material="color: green"></a-mixin>
+			<a-mixin id="yellow" material="color: yellow"></a-mixin>
+		</a-assets>
+	
+		
+		  
+		   <a-entity mixin="box tall wide blue" position="-3 4 -4"></a-entity>
+		  <!--
+		  <a-entity geometry="primitive: box; height: 3; depth: 2; width: 3" material="color: blue" position="-3 4 -4"></a-entity>
+		  <a-entity geometry="primitive: box; height: 3; depth: 2; width: 3" material="color: blue" position="3 -1 -4"></a-entity>
+		  <a-entity geometry="primitive: box; height: 3; depth: 2; width: 3" material="color: green" position="3 5 -4"></a-entity>
+		  <a-entity geometry="primitive: cylinder; radius:2; height:3" material="color: green" position="-3 -1 -4"></a-entity>
+		  <a-entity geometry="primitive: cylinder; radius:2; height:3" material="color: yellow" position="-10 -1 -4"></a-entity>
+		  <a-entity geometry="primitive: cylinder; radius:2; height:3" material="color: blue" position="-10 4 -4"></a-entity>
+		  <a-entity geometry="primitive: sphere; radius:2;" material="color: green" position="8 5 -4"></a-entity>
+		  <a-entity geometry="primitive: sphere; radius:2;" material="color: yellow" position="8 -1 -4"></a-entity>
+			-->
+		</a-scene>
+		
+	</body>
+
+</html>
+
+

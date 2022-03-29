@@ -1,0 +1,1 @@
+{"name":"aframeVR","description":"Ejemplo aframeVR","version":"1.0.0","license":"MIT","scripts":{"start":"live-server --port=7000","deploy":"ghpages"},"devDependencies":{"budo":"^7.0.0","ghpages":"0.0.3","live-server":"^1.2.0","nodemon":"^1.11.0"},"dependencies":{"aframe-extras":"^6.1.1"}}

@@ -1,0 +1,47 @@
+<html>
+ <head>
+ <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+ <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+ <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+ 
+ </head>
+ <body>
+<a-scene background="color: #ECECEC">
+  <a-assets> 
+  
+	<!-- id es un identificador 
+	y src es la ruta donde están tus archivos -->  
+	
+    <a-asset-item id="monito-obj" src="rs/monito.obj"></a-asset-item>
+    <a-asset-item id="monito-mtl" src="rs/monito.mtl"></a-asset-item>
+	<a-asset-item id="leftHand" src="rs/leftHandLow.glb" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"></a-asset-item>
+	<a-asset-item id="rightHand" src="rs/rightHandLow.glb" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-asset-item>
+  </a-assets>
+ <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+   
+   
+   <!-- aquí debes indicar el id como corresponde -->  
+   <a-entity obj-model="obj: #monito-obj; mtl: #monito-mtl" 
+   scale="0.2 0.2 0.2" position="0 0.281 0" rotation="0.1 0 1" animation="property: rotation; to: 0.1 360 1; loop: true; dur: 5000">
+   
+   </a-entity>
+   <a-entity id="camera" camera="" position="0.79361 0.57562 1.24002" look-controls="" rotation="" data-aframe-inspector-original-camera="">
+		<a-cursor color="#ffba70" material="" raycaster="" cursor="" geometry="">
+		</a-cursor>
+   </a-entity>
+   
+	<a-text value="Bienvenidos" position="0.84698 1.22785 -0.43353" 
+	rotation="0 28.029668295595002 0" font="mozillavr" 
+	color="#e43e31" side="double" align="center" width="6"
+	animation="property: position; to:0.84698 1.27 -0.43353; loop: true; direction:alternate;  dur: 1000">
+	
+		
+	</a-text>
+	<!--<a-entity gltf-model="#leftHand" position="-1 0.36 0"></a-entity>
+	<a-entity gltf-model="#rightHand" position="1.7 0.47 0"></a-entity>-->
+	
+   
+   </a-scene>
+
+ </body>
+</html>
