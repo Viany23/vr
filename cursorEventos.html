@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>A-Frame</title>
+ 
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+<script>
+	 AFRAME.registerComponent('change-color-on-hover', {
+		 schema: {
+		 color: {default: 'yellow'}
+		 },
+		 init: function () {
+			 var data = this.data;
+			 var el = this.el; // <a-box>
+			 var defaultColor = el.getAttribute('material').color;
+			 el.addEventListener('mouseenter', function () {
+				el.setAttribute('color', data.color);
+			 });
+			 el.addEventListener('mouseleave', function () {
+				el.setAttribute('color', defaultColor);
+			 });
+		 }
+	 });
+</script>
+<body>
+ <a-scene>
+	
+	<a-box color="#AA1D3E" position="-3 4 -4" change-color-on-hover="color: #33c122"></a-box>
+	<a-box color="#04B45F" position="3 1 -4" change-color-on-hover></a-box>
+	<a-box color="#CC8F94" position="3 4 -4" change-color-on-hover></a-box>
+	
+	 <a-cylinder position="0 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"
+	 event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+	 event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
+	 change-color-on-hover="color: #11c122">
+	 
+	 <a-text id="cylinderText" value="Cilindro" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+	 geometry="primitive: plane; width: 1.50" material="color: #333"></a-text>
+	 </a-cylinder>
+	 
+	 <a-box position="-3 0.75 -3" color="#ACC11D" change-color-on-hover="color: #000000"
+	 event-set__enter="_event: mouseenter; _target: #boxText; visible: true"
+	 event-set__leave="_event: mouseleave; _target: #boxText; visible: false">
+	 
+	 <a-text id="boxText" value="Cubo" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+	 geometry="primitive: plane; width: 1.50" material="color: #555"></a-text>
+	 </a-box>
+	 
+	 <a-sphere position="0 3 -3" radius="0.5" color="#896a0c" change-color-on-hover="color: #cc8f94"
+	 event-set__enter="_event: mouseenter; _target: #boxSphere; visible: true"
+	 event-set__leave="_event: mouseleave; _target: #boxSphere; visible: false">
+	 
+	 <a-text id="boxSphere" value="Esfera" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+	 geometry="primitive: plane; width: 1.5" material="color: #555"></a-text>
+	 </a-sphere>
+
+	<a-camera>
+		<a-cursor material="color: red" geometry="primitive: ring; 
+		radiusInner: 0.02; radiusOuter: 0.04"></a-cursor>
+	</a-camera>
+	
+	
+ 
+ 
+ </a-scene>
+</body>
+</html>
+
+
+
+
